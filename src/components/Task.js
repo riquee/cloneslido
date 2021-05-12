@@ -8,7 +8,6 @@ const Task = ({ task }) => {
     setState,
   } = useContext(GlobalContext);
 
-
   const setLike = () => {
     const update = tasks.map((_task) => {
       if (_task.question === task.question) return { ..._task, likes: _task.likes + 1 };
@@ -18,8 +17,8 @@ const Task = ({ task }) => {
   };
 
   const updateAnswer = () => {
-      const update = tasks.filter((_task) => _task.question !== task.question);
-      setState({...state, answered: [...answered, task],  tasks: update});
+    const update = tasks.filter((_task) => _task.question !== task.question);
+    setState({ ...state, answered: [...answered, task], tasks: update });
   };
 
   const { nameUser, question, likes } = task;
@@ -28,10 +27,9 @@ const Task = ({ task }) => {
       <h3>{nameUser}</h3>
       <p>{question}</p>
       <p onClick={setLike}>{likes}</p>
-      <label name="selectAnswer">
-        Marcar como respondida:
-        <input type="checkbox" onChange={updateAnswer}></input>
-      </label>
+      <button type="button" onChange={updateAnswer}>
+        Respondida
+      </button>
     </div>
   );
 };
