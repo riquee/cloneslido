@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../App';
+import Button from './Button';
 
 const Task = ({ task }) => {
   const {
@@ -26,10 +27,8 @@ const Task = ({ task }) => {
     <div className="task">
       <h3>{nameUser}</h3>
       <p>{question}</p>
-      <p onClick={setLike}>{likes}</p>
-      <button type="button" onChange={updateAnswer}>
-        Respondida
-      </button>
+      <p onClick={setLike}>{`Likes: ${likes}`}</p>
+      <Button name="Respondida" callback={ updateAnswer }/>
     </div>
   );
 };

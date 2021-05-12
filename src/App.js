@@ -7,7 +7,6 @@ import NavBar from './components/NavBar'
 const INITIAL_STATE = {
   tasks: [],
   ids: 0,
-  oldTasks: [],
   answered: [],
   sorted: false,
 };
