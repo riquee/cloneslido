@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 };
 
 const User = () => {
-  const { state, state: { tasks }, setState } = useContext(GlobalContext);
+  const { state, state: { tasks, ids }, setState } = useContext(GlobalContext);
   const [user, setUser] = useState(INITIAL_STATE);
   const { question, nameUser} = user;
 
@@ -17,7 +17,7 @@ const User = () => {
   };
 
   const submitTask = () => {
-    setState({...state, tasks: [...tasks, user] });
+    setState({...state, tasks: [...tasks, {...user, id: ids}], ids: ids + 1 });
     setUser(INITIAL_STATE);
   }
   return (
