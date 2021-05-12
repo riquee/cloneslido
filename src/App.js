@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Answered from './pages/Answered'
 import NavBar from './components/NavBar'
 
+import './App.css';
+
 const INITIAL_STATE = {
   tasks: [],
   answered: [],
@@ -15,8 +17,10 @@ function App() {
   const [state, setState] = useState(INITIAL_STATE);
   return (
     <GlobalContext.Provider value={{ state, setState }}>
-      <h1>Slido</h1>
-      <NavBar/>
+      <header className="App-header">
+        <h1>Slido</h1>
+      </header>
+      <NavBar />
       <Switch>
         <Route path='/respondidas' component={ Answered }/>
         <Route path='/' component={ Home }/>

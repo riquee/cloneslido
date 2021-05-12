@@ -14,7 +14,7 @@ const Answered = () => {
   ));
 
   return (
-    <div>
+    <div className="Answered">
       <h2>Perguntas respondidas</h2>
       {listAnswered}
     </div>

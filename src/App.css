@@ -1,38 +1,107 @@
+:root {
+  --bg-colorHeader: radial-gradient(circle at 12.5% 12.5%, #415670 0, #272c34 50%, #060000 100%);
+  --bg-colorLink: radial-gradient(circle at 12.5% 12.5%, #7988a0 0, #585a5e 50%, #353123 100%);
+  --bg-colorApp: radial-gradient(circle at 87.5% 12.5%, #dbd9fd 0, #949497 50%, #54543a 100%);
+  --color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  grid: auto-flow dense / 40px 40px 1fr;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: var(--bg-colorHeader);
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--color);
 }
 
 .App-link {
-  color: #61dafb;
+  font-size: calc(10px + 1.5vmin);
+  font-weight: 550;
+  display: grid;
+  grid: repeat(1, 35px) / auto-flow 50%;
+  text-align: center;
+  background-image: var(--bg-colorLink);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  text-decoration: none;
+  color: var(--color);
+}
+
+a:hover {
+  opacity: 0.7;
+  background-image: var(--bg-colorHeader);
+  border-radius: 4px;
+}
+
+.Home, .Answered {
+  background: var(--bg-colorApp);
+  display: grid;
+  grid: repeat(2, 120px) / auto-flow;
+  height: 76vh;
+  text-align: center;
+}
+
+h2 {
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+  margin: auto;
+}
+
+.Form {
+  font-size: calc(10px + 1.5vmin);
+  display: grid;
+  grid: repeat(3, 90px) / auto-flow;
+  text-shadow: inset 4px 4px 15px 0px #000000;
+}
+
+.InputForm, .ButtonForm {
+  display: grid;
+  margin: auto;
+  width: 90%;
+  height: 6vh;
+  border: none;
+  border-radius: 10px;
+  box-shadow: #272c34;
+}
+
+.ButtonForm {
+  height: 4vh;
+  text-align: center;
+  font-size: calc(10px + 1.43vmin);
+  font-weight: 650;
+  width: 20%;
+  background-image: var(--bg-colorApp);
+  box-shadow: 2px 5px 16px 0px #272c34;
+  color: var(--color);
+  cursor: pointer;
+}
+
+.ButtonForm:hover {
+  opacity: 0.7;
+  background-image: var(--bg-colorHeader);
+  border-radius: 10px;
+  color: var(--color);
+  box-shadow: 2px 5px 16px 0px #272c34;
+}
+
+.InputForm {
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0)
+}
+
+.InputForm:hover {
+  box-shadow: 0px 10px 13px -7px #000000;
 }

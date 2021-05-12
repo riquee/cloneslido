@@ -21,16 +21,16 @@ const User = () => {
     setUser(INITIAL_STATE);
   }
   return (
-    <div>
+    <div className="Form">
       <label htmlFor="question">
         Pergunta:
-        <input type="text" name="question" value={ question } onChange={ handle } />
+        <input className="InputForm" type="text" name="question" value={ question } onChange={ handle } />
       </label>
       <label htmlFor="nameUser">
         Nome:
-        <input type="text" name="nameUser" value={ nameUser } onChange={ handle } />
+        <input className="InputForm" type="text" name="nameUser" value={ nameUser } onChange={ handle } />
       </label>
-      <button type='button' onClick={ submitTask }>Enviar</button>
+      <button className="ButtonForm" type='button' onClick={ submitTask }>Enviar</button>
     </div>
   );
 };
