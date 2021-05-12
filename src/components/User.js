@@ -1,5 +1,6 @@
 import React, { useState, useContext} from 'react';
 import { GlobalContext } from '../App';
+import Button from './Button'
 
 const INITIAL_STATE = {
   nameUser: '',
@@ -20,6 +21,7 @@ const User = () => {
     setState({...state, tasks: [...tasks, {...user, id: ids}], ids: ids + 1 });
     setUser(INITIAL_STATE);
   }
+  
   return (
     <div>
       <label htmlFor="question">
@@ -30,7 +32,7 @@ const User = () => {
         Nome:
         <input type="text" name="nameUser" value={ nameUser } onChange={ handle } />
       </label>
-      <button type='button' onClick={ submitTask }>Enviar</button>
+      <Button name='Enviar' callback={ submitTask } />
     </div>
   );
 };
